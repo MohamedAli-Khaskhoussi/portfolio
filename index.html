@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Ali – Portfolio</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="profile-container">
+        <img src="static/profile.jpg" alt="Foto von Mohamed Ali" class="profile-img">
+      </div>
+      <div class="intro">
+        <h1>Mohamed Ali Khaskhoussi</h1>
+        <p class="sub">IT-Systemelektroniker </p>
+        <p class="about-short">
+          Ich bin 23 Jahre alt, komme aus Tunesien und habe die dritte Sekundarstufe abgeschlossen. 
+          Ich habe eine Ausbildung im IT-Bereich absolviert, die in Deutschland über die IHK anerkannt wurde. 
+          Ich bin hochmotiviert, zuverlässig und strebe stets danach, mich weiterzuentwickeln. 
+          Meine Leidenschaft für IT treibt mich an, neue Fähigkeiten zu erlernen und praxisorientierte Projekte umzusetzen.
+          
+        </p>
+        <a class="btn" href="contact.html">Kontakt</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="experience" class="card">
+      <h2>Berufserfahrung</h2>
+      <ul>
+        <li>Praktische Erfahrung in der Netzwerktechnik (TCP/IP, DNS, DHCP)</li>
+        <li>Kenntnisse im Umgang mit Netzwerkdiagnosetools (z. B. Ping, Traceroute)</li>
+        <li>Grundlegende Kenntnisse in Cybersicherheit und Firewall-Konfiguration</li>
+        <li>Wartung von Computern</li>
+        <li>Lieferantenbeziehungen</li>
+        <li>Installation und Konfiguration von Software und Betriebssystemen</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Fähigkeiten</h2>
+      <ul>
+        <li>Herausragende Kommunikationsstärke</li>
+        <li>Penetrationstests: Aircrack, Wireshark, Nmap</li>
+        <li>Symmetrische und asymmetrische Verschlüsselung (AES, RSA)</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Projekte (Kurz)</h2>
+      <ul>
+        <li><strong>Heim-/Büro-Netzwerk:</strong> Planung & Konfiguration (Router, Switch, WLAN, Sicherheit)</li>
+        <li><strong>Verschlüsselungstool:</strong> Symmetrische/Asymmetrische Verschlüsselung mit Python & OpenSSL</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mohamed Ali Khaskhoussi — <a href="contact.html">Kontakt</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+

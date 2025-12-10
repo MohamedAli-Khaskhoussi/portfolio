@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Mohamed Ali</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Kontakt</h1>
+      <a class="btn" href="index.html">Zurück zur Startseite</a>
+    </div>
+  </header>
+
+  <!-- Main Contact Form -->
+  <main class="container">
+    <section class="card">
+      <h2>Schreiben Sie mir</h2>
+      <p>Füllen Sie das Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.</p>
+
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/mldqpopq" method="POST" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required>
+
+        <label for="message">Nachricht:</label>
+        <textarea id="message" name="message" rows="6" placeholder="Ihre Nachricht" required></textarea>
+
+        <div class="form-buttons">
+          <input type="submit" value="Senden" class="btn">
+          <input type="reset" value="Zurücksetzen" class="btn btn-secondary">
+        </div>
+
+        <!-- Anti-spam field -->
+        <input type="text" name="_gotcha" style="display:none">
+      </form>
+
+      <!-- Success message -->
+      <p class="thank-you" style="display:none; color:green; margin-top:12px;">
+        Danke! Ihre Nachricht wurde gesendet.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mohamed Ali Khaskhoussi</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for sending via Formspree -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.querySelector('.contact-form');
+    const thankYou = document.querySelector('.thank-you');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault(); // Prevent default form submission
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if(response.ok){
+          thankYou.style.display = 'block';
+          form.reset();
+        } else {
+          alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später.');
+        }
+      }).catch(() => {
+        alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später.');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
